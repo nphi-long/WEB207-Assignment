@@ -24,6 +24,11 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/slider.css",
+              "src/assets/css/frontend.css",
+              "src/assets/css/sb-admin-2.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
