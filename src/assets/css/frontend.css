@@ -99,7 +99,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      color:#303030;
      display:inline-block;
  }
- .cart p span{
+ .cart span{
      font-size:1.5em;
      color:#E4292F;
  }
@@ -191,9 +191,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     -ms-transition: all .9s;
     transition: all .9s;
  }
- .menu li a:hover,.menu li.active a{
+ .menu li a:hover{
      background:#B81D22;
  }
+.menu .active{
+    background:#B81D22;
+}
+.nav-item .active{
+    color: red;
+}
  .menu li:first-child  a{
      border-radius:6px 0 0 6px;
      -webkit-border-radius:6px 0 0 6px;

@@ -1,0 +1,43 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Add Product</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
+        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+            DataTables documentation</a>.</p>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Adding Product Form</h6>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name">
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="img" [(ngModel)]="product.image" name="image">
+                    <label class="custom-file-label" for="img">Image</label>
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <select class="form-control" id="brand" *ngIf="brandList" [(ngModel)]="product.brand" name="brand">
+                      <option *ngFor="let brand of brandList">{{brand.name}}</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                    <label for="desc">Description</label>
+                    <textarea class="form-control" id="desc" rows="3" [(ngModel)]="product.description" name="description"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" (click)="addProduct()">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

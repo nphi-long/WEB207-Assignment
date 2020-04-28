@@ -1,1 +1,60 @@
-<p>product-list works!</p>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Product List</h1>
+  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
+    information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+      DataTables documentation</a>.</p>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Product List Table</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Brand date</th>
+              <th>Description</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Brand</th>
+              <th>Description</th>
+              <th colspan="2"></th>
+            </tr>
+          </tfoot>
+          <tbody *ngFor="let item of items | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize;">
+            <tr>
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td><img [src]="item.image" width="50px" height="60px"></td>
+              <td>${{item.price}}</td>
+              <td>{{item.brand}}</td>
+              <td>{{item.description}}</td>
+              <td><a [routerLink]="['update',item.id]" class="btn btn-outline-primary">Update</a></td>
+              <td><button (click)="removeItem(item.id)" class="btn btn-outline-danger">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="items.length">
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /.container-fluid -->
