@@ -26,11 +26,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="account_desc">
 					<ul>
-						<li><a href="#">Register</a></li>
-						<li><a href="#">Login</a></li>
-						<li><a href="#">Delivery</a></li>
-						<li><a href="#">Checkout</a></li>
-						<li><a href="#">My Account</a></li>
+						<li><a href="#" onclick="return false">Register</a></li>
+						<li><a href="#" onclick="return false">Login</a></li>
+						<li><a routerLink="/client/delivery" routerLinkActive="active">Delivery</a></li>
+						<li><a href="#" onclick="return false">Checkout</a></li>
+						<li><a href="#" onclick="return false">My Account</a></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -39,42 +39,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="logo">
 					<a routerLink=""><img src="/../assets/img/logo.png" alt="" /></a>
 				</div>
-				<div class="cart">
+				<!-- <div class="cart">
 					Welcome to our Online Store! <span> Cart:</span>
 					<div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
 						<ul class="dropdown">
 							<li>you have no items in your Shopping cart</li>
 						</ul>
 					</div>
-				</div>
-				<script type="text/javascript">
-					function DropDown(el) {
-						this.dd = el;
-						this.initEvents();
-					}
-					DropDown.prototype = {
-						initEvents: function () {
-							var obj = this;
-
-							obj.dd.on('click', function (event) {
-								$(this).toggleClass('active');
-								event.stopPropagation();
-							});
-						}
-					}
-
-					$(function () {
-
-						var dd = new DropDown($('#dd'));
-
-						$(document).click(function () {
-							// all dropdowns
-							$('.wrapper-dropdown-2').removeClass('active');
-						});
-
-					});
-
-				</script>
+				</div> -->
+				
 				<div class="clear"></div>
 			</div>
 			<div class="header_bottom">
@@ -88,12 +61,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="clear"></div>
 					</ul>
 				</div>
-				<div class="search_box">
+				<!-- <div class="search_box">
 					<form>
 						<input type="text" value="Search" onfocus="this.value = '';"
 							onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
 					</form>
-				</div>
+				</div> -->
 				<div class="clear"></div>
 			</div>
 			<router-outlet></router-outlet>
@@ -105,31 +78,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col_1_of_4 span_1_of_4">
 						<h4>Information</h4>
 						<ul>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.html">Customer Service</a></li>
-							<li><a href="#">Advanced Search</a></li>
-							<li><a href="delivery.html">Orders and Returns</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a routerLink="/client/about" routerLinkActive="active">About Us</a></li>
+							<li><a routerLink="/client/contact" routerLinkActive = "active">Customer Service</a></li>
+							<li><a href="#" onclick="return false">Advanced Search</a></li>
+							<li><a routerLink="/client/delivery" routerLinkActive = "active">Orders and Returns</a></li>
+							<li><a routerLink="/client/contact" routerLinkActive = "active">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col_1_of_4 span_1_of_4">
 						<h4>Why buy from us</h4>
 						<ul>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.html">Customer Service</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-							<li><a href="#">Search Terms</a></li>
+							<li><a routerLink="/client/about" routerLinkActive="active">About Us</a></li>
+							<li><a routerLink="/client/contact" routerLinkActive = "active">Customer Service</a></li>
+							<li><a href="#" onclick="return false">Privacy Policy</a></li>
+							<li><a routerLink="/client/contact" routerLinkActive = "active">Site Map</a></li>
+							<li><a href="#" onclick="return false">Search Terms</a></li>
 						</ul>
 					</div>
 					<div class="col_1_of_4 span_1_of_4">
 						<h4>My account</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>
-							<li><a href="index.html">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="contact.html">Help</a></li>
+							<li><a href="contact.html" onclick="return false">Sign In</a></li>
+							<li><a href="index.html" onclick="return false">View Cart</a></li>
+							<li><a href="#" onclick="return false">My Wishlist</a></li>
+							<li><a href="#" onclick="return false">Track My Order</a></li>
+							<li><a routerLink="/client/contact" routerLinkActive = "active">Help</a></li>
 						</ul>
 					</div>
 					<div class="col_1_of_4 span_1_of_4">

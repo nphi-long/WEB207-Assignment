@@ -12,6 +12,7 @@ import { Product } from 'src/app/model/product';
 export class UpdateProductComponent implements OnInit {
   brandList: Brand[];
   product: Product;
+  url: string;
   constructor(
     private backendService: BackendService,
     private route: ActivatedRoute,
@@ -30,6 +31,18 @@ export class UpdateProductComponent implements OnInit {
     this.route.params.subscribe(param => this.backendService.getProduct(param.productID).subscribe(data => this.product = data));
   }
   updatProduct(){
+    this.product.image = this.url;
     this.backendService.updateProduct(this.product).subscribe(data => this.router.navigateByUrl('/admin/product'))
   }
+  onSelectFile(event) { // called each time file input changes
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = <string> event.target.result;
+      }
+    }
+}
 }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AddProductComponent implements OnInit {
   brandList: Brand[];
   product: Product = new Product();
+  url :string;
 
   constructor(
     private backendService: BackendService,
@@ -28,6 +29,19 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct(){
+    this.product.image = this.url;
     this.backendService.addProduct(this.product).subscribe(data => this.router.navigateByUrl('/admin/product'))
   }
+
+  onSelectFile(event) { // called each time file input changes
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = <string> event.target.result;
+      }
+    }
+}
 }
